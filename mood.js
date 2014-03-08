@@ -159,6 +159,11 @@ RPA.prototype.connectToArduino = function () {
       // rpa.chat.sendEvent('choice', weapon);
       rpa.arduino.writeEvent('you_choose_weapon', weapon[0]);
       rpa.checkOutcome();
+    })
+    .on('rfid_detected', function (rfid_id) {
+      console.log(rfid_id);
+      user_state.set('rfid_id', rfid_id);
+      user_state.save();
     });
 
 
