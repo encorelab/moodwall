@@ -1,0 +1,42 @@
+{
+  "name": "MoodWall",
+  "preferGlobal": "false",
+  "version": "0.0.1",
+  "author": "ENCORE Lab",
+  "description": "Bridge between the Internet and Arduino",
+  "contributors": [
+    {
+      "name": "Matt Zukowski",
+      "email": "matt@zukowski.ca"
+    },
+    {
+      "name": "Armin Krauss",
+      "email": "mackrauss@gmail.com"
+    }
+  ],
+  "main": "./mood.js",
+  "dependencies": {
+    "node-gyp": "*",
+    "serialport": "1.3.1",
+    "cli-color": "*",
+    "eventemitter2": "*",
+    "underscore": "1.5.2",
+    "underscore.deferred": "~0.4.0",
+    "backbone": "1.1.0",
+    "optimist": "~0.6",
+    "backbone.drowsy": "0.2.3"
+  },
+  "analyze": false,
+  "devDependencies": {
+    "coffee-script": "1.7.1",
+    "grunt": "~0.4.0",
+    "grunt-contrib": "~0.4.0",
+    "grunt-jsonlint": "~1.0.4",
+    "grunt-coffeelint": "0.0.8"
+  },
+  "bundleDependencies": [],
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
