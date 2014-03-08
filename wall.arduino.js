@@ -86,12 +86,28 @@ Arduino.prototype.processInput = function (input) {
   var ev = c[1];
   var arg = c[2];
 
+  var args = [];
+
+  for (var i=2; i < c.length; i++) {
+    console.log(c[i]);
+    args.push(c[i]);
+  }
+  console.log(args);
+
   if (input === '~') {
     this.emit('online');
     //rpa.prepare();
   } else if (ctrl === '<') {
     // NOTE: arg can be undefined
-    this.emit(ev, arg);
+    if (c.length <= 3)
+      this.emit(ev, arg);
+    else {
+      var argString = '';
+      for (var j=0; j<args.length;j++) {
+        argString += args[j] + ' ';
+      }
+      this.emit(ev, argString);
+    }
     //rpa.fsm.handle(cmd, arg);
   } else {
     console.warn(color.red("!!! Unknown message from Arduino: "), input.toString());
